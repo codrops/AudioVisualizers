@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+	background: #000;
+	overflow: hidden;
+	font-size: 0.85rem;
+}
+
+.demo-1 {
+	color: #2376a5;
+}
+
+.demo-2 {
+	color: #c83f2b;
+}
+
+.demo-3 {
+	color: #1d3cbb;
+}
+
+.demo-4 {
+	color: #ffeb3b;
+}
+
+.demo-5 {
+	color: #5b0ff5;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #333;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+/* Header */
+.codrops-header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	padding: 2vmax;
+	z-index: 1;
+}
+
+.codrops-header__title {
+	font-size: 1em;
+	margin: 0;
+	padding: 0 1em;
+	color: #fff;
+}
+
+.codrops-header__tagline {
+	margin: 0;
+}
+
+/* Top Navigation Style */
+.codrops-links {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-icon {
+	display: inline-block;
+	margin: 0.25em;
+	padding: 0.25em;
+}
+
+/* Demo links */
+.demos {
+	margin: 0 0 0 3rem;
+}
+
+.demo {
+	margin: 0 1em 0.5em 0;
+	padding: 0 0 0.25em;
+}
+
+.demo:hover,
+.demo--current {
+	color: #fff;
+}
+
+/* Content */
+.content {
+	padding: 3em 0;
+}
+
+.content.main {
+	min-height: 100vh; 
+	padding: 0;
+}
+
+.canvas-wrapper {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%; 
+}
+
+.p5_loading {
+	background: black;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgb(0, 0, 0);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	overflow: hidden;
+}
+
+.p5_loading__inner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);  
+	display: flex;
+}
+
+.p5_loading__inner span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background: rgb(255, 255, 255);
+	margin: 0 20px;
+	transform-origin: center;
+	animation: noiseLoad 0.5s infinite ease-in-out alternate;
+}
+
+.p5_loading__inner span:nth-child(2) {
+	animation-delay: 0.33s;
+}
+
+.p5_loading__inner span:nth-child(3) {
+	animation-delay: 0.66s;
+}
+
+@keyframes noiseLoad {
+	from {
+		transform: scale(0);
+		background: rgb(255, 255, 255);
+	}
+	
+	to {
+		transform: scale(1);
+		background: rgb(0, 0, 0);
+		
+	}
+}
+
+#uploading-animation {
+	display: none;
+}
+
+#uploading-animation.is-visible {
+	display: block;
+}
+
+.upload-btn::before,
+.toggle-btn {
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: currentColor;
+	position: absolute;
+	bottom: 2vmax;   
+	border: 1px solid;
+	width: 255px;
+}
+
+.upload-btn::before {
+	content: 'Upload your track';
+	display: inline-block;  
+	left: 2vmax;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+}
+
+.upload-btn:hover::before {
+	color: #fff;
+}
+
+.toggle-btn {
+	background: transparent;
+	color: currentColor;
+	right: 2vmax;
+}
+
+.toggle-btn:focus {
+	outline: none;
+}
+
+.toggle-btn:hover {
+	color: #fff;
+}
+
+@media screen and (max-width: 55em) {
+	.codrops-header {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.demos {
+		width: 100%;
+		margin: 1em 0 0;
+		text-align: center;
+	}
+	.toggle-btn {
+		right: 10px;
+		bottom: 5.5em;
+		width: calc(100% - 20px);
+	}
+	.upload-btn::before {
+		position: absolute;
+		bottom: 9em;
+		left: 10px;
+		width: calc(100% - 20px);
+	}
+}
