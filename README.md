@@ -2,7 +2,7 @@
 
 An exploration of modern, line-style sound visualization powered by p5js and its p5.sound library. By Yannis Yannakopoulos.
 
-![Image Title](link)
+![Audio Visualizers](https://tympanus.net/codrops/wp-content/uploads/2018/03/AudioVisualizers_featured.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=33934)
 
