@@ -1,4 +1,4 @@
-# Modern Audio Visualizers
+# Creative Audio Visualizers
 
 An exploration of modern, line-style sound visualization powered by p5js and its p5.sound library. By Yannis Yannakopoulos.
 
